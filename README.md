@@ -1,7 +1,7 @@
 # Resident Communication Hub
  Power Virtual Agents-based communication hub providing automated responses to common resident queries and disseminate important information efficiently
-Objective:
-Create an interactive and automated communication hub using Power Virtual Agents to improve resident engagement, answer common queries, and disseminate important information efficiently.
+# Objective:
+Resident-Communication-Hub is a Power Virtual Agents-based communication hub designed to facilitate automated communication and information dissemination for residents in strata communities. The bot aims to provide quick and accurate responses to common queries, announcements, and other communication needs within the strata.
 
 # Key Features:
 
@@ -32,11 +32,19 @@ Incorporate language support in the Virtual Agent to cater to the diverse lingui
 # Integration with Other Platforms:
 
 Integrate the Virtual Agent with other communication channels, such as email or SMS, to ensure residents receive information through their preferred channels.
+
 Benefits:
 
-# 24/7 Availability: Residents can access information and make inquiries at any time, improving accessibility.
+# 24/7 Availability: 
+Residents can access information and make inquiries at any time, improving accessibility.
 Efficient Communication: Reduces the burden on strata management by automating routine communication tasks.
 Enhanced Resident Experience: Provides a convenient and user-friendly platform for residents to engage with strata management and stay informed.
+
+# Technologies Used:
+Power Virtual Agents: Building the chatbot interface for resident interaction.
+Power Automate: Managing workflows for feedback collection, announcement broadcasts, and other automated processes.
+Azure Cognitive Services: Enhancing natural language processing capabilities for more effective communication.
+
 # Implementation:
 Utilize Power Virtual Agents to design conversation flows, integrate with Power Automate for workflow automation, and connect with other data sources to provide real-time information.
 
