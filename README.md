@@ -33,10 +33,9 @@ Incorporate language support in the Virtual Agent to cater to the diverse lingui
 
 Integrate the Virtual Agent with other communication channels, such as email or SMS, to ensure residents receive information through their preferred channels.
 
-Benefits:
+# Benefits:
 
-# 24/7 Availability: 
-Residents can access information and make inquiries at any time, improving accessibility.
+24/7 Availability: Residents can access information and make inquiries at any time, improving accessibility.
 Efficient Communication: Reduces the burden on strata management by automating routine communication tasks.
 Enhanced Resident Experience: Provides a convenient and user-friendly platform for residents to engage with strata management and stay informed.
 
