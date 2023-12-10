@@ -1,0 +1,106 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    triggerQueries:
+      - Problem
+      - Damage
+      - Emergency
+
+  actions:
+    - kind: Question
+      id: question_kbRtFt
+      interruptionPolicy:
+        allowInterruption: true
+
+      variable: init:Topic.Var1
+      prompt: Whit kind of help can we provide
+      entity:
+        kind: EmbeddedEntity
+        definition:
+          kind: ClosedListEntity
+          items:
+            - id: Technical problem/handyman needed
+              displayName: Technical problem/handyman needed
+
+            - id: Give information about payments
+              displayName: Give information about payments
+
+            - id: Give suggestions for future improvements
+              displayName: Give suggestions for future improvements
+
+    - kind: ConditionGroup
+      id: conditionGroup_H2BhYK
+      conditions:
+        - id: conditionItem_jMcalj
+          condition: =Topic.Var1 = 'cr6f6_residentCommunicationHub.topic.Emergency.main.question_kbRtFt'.'Technical problem/handyman needed'
+          actions:
+            - kind: Question
+              id: question_PiNNDB
+              interruptionPolicy:
+                allowInterruption: true
+
+              variable: init:Topic.Var2
+              prompt: Give the address?
+              entity:
+                kind: ClosedListEntityReference
+                entityId: cr6f6_residentCommunicationHub.entity.Buildingaddress
+
+            - kind: Question
+              id: question_i0kV4q
+              interruptionPolicy:
+                allowInterruption: true
+
+              variable: init:Topic.Var3
+              prompt: Describe the problem in details
+              entity:
+                kind: ClosedListEntityReference
+                entityId: cr6f6_residentCommunicationHub.entity.Technicalissues
+
+            - kind: SendActivity
+              id: sendActivity_UexGuw
+              activity: A team wil be on the site as soon as possible
+
+            - kind: EndDialog
+              id: gQjpkW
+
+        - id: conditionItem_f02zeK
+          condition: =Topic.Var1 = 'cr6f6_residentCommunicationHub.topic.Emergency.main.question_kbRtFt'.'Give information about payments'
+          actions:
+            - kind: Question
+              id: question_IQgB7x
+              interruptionPolicy:
+                allowInterruption: true
+
+              variable: init:Topic.Var4
+              prompt: Give the adress
+              entity:
+                kind: ClosedListEntityReference
+                entityId: cr6f6_residentCommunicationHub.entity.Buildingaddress
+
+        - id: conditionItem_4XdGWo
+          condition: =Topic.Var1 = 'cr6f6_residentCommunicationHub.topic.Emergency.main.question_kbRtFt'.'Give suggestions for future improvements'
+          actions:
+            - kind: Question
+              id: question_6rRtjo
+              interruptionPolicy:
+                allowInterruption: true
+
+              variable: init:Topic.Var5
+              prompt: Please give suggestions for imrpovements in your building
+              entity: StringPrebuiltEntity
+
+            - kind: EndDialog
+              id: V5toQK
+
+      elseActions:
+        - kind: SendActivity
+          id: sendActivity_0MP2YW
+          activity: Please call our office or write email
+
+        - kind: EndDialog
+          id: iJYO5o
+
+    - kind: CancelAllDialogs
+      id: k4Z28o
